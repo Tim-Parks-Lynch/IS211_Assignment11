@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+div {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+.alert {
+  display: block;
+}
+body {
+  margin: 0;
+  text-align: center;
+  background-color: #003844;
+  color: #f3f3f3;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20 px rgba(0, 0, 0, 0.15);
+}
+
+fieldset {
+  display: table;
+  /* padding-left: 20px; */
+  margin-top: 10px;
+  min-width: 400px;
+  border: none;
+}
+fieldset p {
+  display: table-row;
+  font-size: 1.2rem;
+}
+fieldset input,
+fieldset select,
+fieldset label {
+  display: table-cell;
+  margin: 3px;
+}
+fieldset label {
+  text-align: right;
+}
+
+.select-priority {
+  text-align: left;
+}
+
+.button-submit {
+  background-color: #006c67;
+  border-radius: 10px;
+  color: #dddddd;
+}
+
+.button-clear {
+  background-color: #dd2d4a;
+  color: #dddddd;
+  border-radius: 10px;
+}
+
+.button-save {
+  background-color: #ffb100;
+  color: #003844;
+  border-radius: 10px;
+}
+button {
+  font-weight: bold;
+  border: 1px solid #dddddd;
+  font-size: 1.2rem;
+}
+
+#button-divs {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  gap: 10px;
+  /* margin: 0.25em; */
+  /* padding: 10px; */
+}
+
+thead tr {
+  border-radius: 30px;
+  background-color: #ffb100;
+  color: #003844;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 12px 15px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #006c67;
+}
+tbody tr:last-of-type {
+  border-bottom: 2px solid #dddddd;
+}
+
+tr button {
+  border-radius: 3px;
+  color: #003844;
+}
+
+caption {
+  font-family: sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}

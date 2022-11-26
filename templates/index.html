@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  <table>
+    {% if tasks%}
+    <caption>
+      Tasks to Complete
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Email</th>
+        <th scope="col">Priority</th>
+        <th />
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+      <tr>
+        <td>{{ task.task}}</td>
+        <td>{{ task.email }}</td>
+        <td>{{ task.priority}}</td>
+        <td>
+          <form>
+          <button
+            type="submit"
+            formaction="/delete/{{loop.index0}}"
+          >
+            Delete
+          </button>
+        </form>
+        </td>
+      </tr>
+      {% endfor %} {%else%}
+</div>
+<div>
+      <caption>
+        Create a task
+      </caption>
+      {%endif%}
+    </tbody>
+  </table>
+  <form id="task-form" method="post" action="/submit">
+  <fieldset>
+      <div id='label-div'>
+        <p>
+          <label id='task' class='label-input' for="task">Task</label>
+          <input type="text" name="task" minlength="1" required/>
+        </p>
+        <p>
+          <label id='email' class='label-input' for="email">Email</label>
+          <input type="email" name="email" required/>
+        </p>
+
+        <p class="select-priority">
+          <label for="priority">Priority</label>
+          <select name="priority" required>
+            <option selected>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+          {% if error %}
+          {% for e in error %}
+          <p>{{e}}</p>
+          {% endfor%}
+          {% endif %}
+        </p>
+    </div>
+    </fieldset>
+  </form>
+  <form id="save" action='/save'></form>
+  <form id='clear' action='/clear'></form>
+  <div id='button-divs'>
+      <button class="button-submit" type="submit" form="task-form">Add To Do Item</button>
+      <button class="button-save" type="submit" form="save" formaction='/save'>Save</button>
+      <button class="button-clear" type="submit" form='clear' formaction="/clear">Clear</button>
+</div>
+</div>
+{% endblock %}
